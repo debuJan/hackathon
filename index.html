@@ -27,11 +27,12 @@
 
         <section id="register" class="card">
             <h2>Group Registration</h2>
-            <form id="registrationForm">
+            <form id="registrationForm" onsubmit="registerTeam(event)">
                 <input type="text" id="teamName" placeholder="Team Name" required>
                 <input type="email" id="email" placeholder="Email" required>
                 <button type="submit">Register</button>
             </form>
+            <button onclick="redirectToLogin()" class="btn-secondary">Already registered? Login</button>
         </section>
 
         <section id="leaderboard" class="card">
@@ -51,11 +52,12 @@
 
         <section id="login" class="card">
             <h2>Login</h2>
-            <form id="loginForm">
+            <form id="loginForm" onsubmit="loginUser(event)">
                 <input type="email" id="loginEmail" placeholder="Email" required>
                 <input type="password" id="loginPassword" placeholder="Password" required>
                 <button type="submit">Login</button>
             </form>
+            <button onclick="redirectToRegister()" class="btn-secondary">New here? Register</button>
         </section>
     </main>
 
@@ -64,5 +66,31 @@
     </footer>
 
     <script src="app.js"></script>
+
+    <script>
+        function registerTeam(event) {
+            event.preventDefault();
+            const teamName = document.getElementById('teamName').value;
+            const email = document.getElementById('email').value;
+            alert(`✅ Team ${teamName} registered successfully with email ${email}!`);
+            document.getElementById('registrationForm').reset();
+        }
+
+        function loginUser(event) {
+            event.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+            alert(`🔒 Logged in successfully as ${email}!`);
+            document.getElementById('loginForm').reset();
+        }
+
+        function redirectToLogin() {
+            window.location.href = '#login';
+        }
+
+        function redirectToRegister() {
+            window.location.href = '#register';
+        }
+    </script>
 </body>
 </html>
