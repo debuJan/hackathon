@@ -1,0 +1,68 @@
+<!-- HTML FILE: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon Hosting Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hackathon Hosting Platform</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#register">Register</a>
+            <a href="#leaderboard">Leaderboard</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <h2>Welcome to the Hackathon</h2>
+            <p>Register your team, compete, and win exciting prizes!</p>
+        </section>
+
+        <section id="register" class="card">
+            <h2>Group Registration</h2>
+            <form id="registrationForm">
+                <input type="text" id="teamName" placeholder="Team Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <section id="leaderboard" class="card">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboardList"></ul>
+        </section>
+
+        <section id="schedule" class="card">
+            <h2>Schedule</h2>
+            <ul id="scheduleList"></ul>
+        </section>
+
+        <section id="certificate" class="card">
+            <h2>Download Certificate</h2>
+            <button onclick="generateCertificate()">Download</button>
+        </section>
+
+        <section id="login" class="card">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hackathon Hosting Platform</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
